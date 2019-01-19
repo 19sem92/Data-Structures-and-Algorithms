@@ -1,6 +1,6 @@
 // Queues F first I in F first O out
 
-function createQueue() {
+const createQueue = () => {
     const queue = []
 
     return {
@@ -19,19 +19,16 @@ function createQueue() {
         },
         isEmpty () {
             return queue.length === 0
+        },
+        get q () {
+            return queue
         }
     }
 }
 
 const q = createQueue()
 
-console.log(q.isEmpty());
 q.enqueue('first item')
-q.enqueue('second item')
-q.enqueue('third item')
-
 console.log(q.peek())
 
-q.dequeue()
-
-console.log(q.length)
+module.exports = createQueue
